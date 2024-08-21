@@ -32,7 +32,7 @@ function Skills() {
                         <article>Here are some of my skills on which I have been working on for the past 9months</article>
                     </div>
                     <Row className='d-flex justify-content-center align-content-between align-items-center row-gap-5 px-3 px-md-0 gap-md-4 gap-lg-5 p-md-5'>
-                        <Col className='col-12 col-md-5 col-lg-4 border py-4 py-md-3 py-lg-5 align-content-center skillSet'>
+                        <Col className='col-12 col-md-5 col-lg-4 py-4 py-md-3 py-lg-5 align-content-center skillSet'>
                             <h3 className='text-center mb-4'>Frontend</h3>
                             <main className='col-12 d-flex justify-content-evenly align-items-center flex-wrap p-2'>
                                 <div className='border-1 border rounded-pill d-flex align-items-center m-2 py-2 px-2'>
@@ -61,7 +61,7 @@ function Skills() {
                                 </div>
                             </main>
                         </Col>
-                        <Col className='col-12 col-md-5 col-lg-4 border py-4 py-md-3 py-lg-5 align-content-center skillSet'>
+                        <Col className='col-12 col-md-5 col-lg-4 py-4 py-md-3 py-lg-5 align-content-center skillSet'>
                             <h3 className='text-center mb-4'>Backend</h3>
                             <main className='col-12 d-flex justify-content-evenly align-items-center flex-wrap p-2'>
                                 <div className='border-1 border rounded-pill d-flex align-items-center m-2 py-2 px-2'>
@@ -82,7 +82,7 @@ function Skills() {
                                 </div>
                             </main>
                         </Col>
-                        <Col className='col-12 col-md-5 col-lg-4 border py-4 py-md-3 py-lg-5 align-content-center skillSet'>
+                        <Col className='col-12 col-md-5 col-lg-4 py-4 py-md-3 py-lg-5 align-content-center skillSet'>
                             <h3 className='text-center mb-4'>Others</h3>
                             <main className='col-12 d-flex justify-content-evenly align-items-center flex-wrap p-2'>
                                 <div className='border-1 border rounded-pill d-flex align-items-center m-2 py-2 px-2'>
