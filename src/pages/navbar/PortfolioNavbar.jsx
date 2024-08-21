@@ -1,10 +1,15 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Col, Container, Image, Nav, Navbar } from 'react-bootstrap';
 import seoLogo from '/Project/PortfolioFrontend/Portfolio/src/assets/logo/seo.png';
 import { Link as ScrollLink } from 'react-scroll';
 
 function PortfolioNavbar() {
+    const [gitHubStatus, setGithubStates] = useState ("GitHub Profile");
+    const githubRedirection = () => {
+        setGithubStates("Redirecting . . . .");
+        window.location.href = "https://github.com/Dineshofficiall";
+    }
   return (
     <>
         <Navbar sticky="top" collapseOnSelect expand="lg">
@@ -68,7 +73,7 @@ function PortfolioNavbar() {
                         </ScrollLink>
                     </Nav>
                     <Nav className='col-lg-3'>
-                        <Button variant="outline-secondary rounded-pill">GitHub Profile</Button>
+                        <Button variant="outline-secondary rounded-pill" onClick={()=> githubRedirection()}>{gitHubStatus}</Button>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
