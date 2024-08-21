@@ -8,18 +8,16 @@ function PortfolioNavbar() {
   return (
     <>
         <Navbar sticky="top" collapseOnSelect expand="lg">
-            <Container>
-                <Col className='col-md-3 d-flex justify-content-start justify-content-md-center align-items-center'>
-                <div className='d-flex align-items-center'>
+            <Container className='px-0 px-lg-5'>
+                <Col className='col-md-3 ms-2 ms-lg-0 d-flex justify-content-start justify-content-md-center align-items-center'>
                     <Image style={{ width: '40px', marginRight: '.8rem' }} src={seoLogo} alt='Logo' />
                     <Navbar.Brand>Portfolio</Navbar.Brand>
-                </div>
                 </Col>
 
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
                 <Navbar.Collapse className='py-4 py-lg-0' id="responsive-navbar-nav">
-                    <Nav className="col-lg-9 mb-4 mb-lg-0 d-flex justify-content-evenly align-items-center me-auto">
+                    <Nav className="col-lg-8 mb-4 mb-lg-0 d-flex justify-content-evenly align-items-center me-auto">
                         <ScrollLink
                             activeClass="active"
                             className="nav-link"
@@ -69,7 +67,7 @@ function PortfolioNavbar() {
                             Education
                         </ScrollLink>
                     </Nav>
-                    <Nav>
+                    <Nav className='col-lg-3'>
                         <Button variant="outline-secondary rounded-pill">GitHub Profile</Button>
                     </Nav>
                 </Navbar.Collapse>

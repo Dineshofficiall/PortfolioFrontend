@@ -4,7 +4,7 @@ import React from 'react'
 function Skills() {
     return (
         <>
-            <section id="skills"  style={{ height: '100vh', background: 'lightgreen' }}>
+            <section id="skills">
                 <h1>skills-page</h1>
             </section>
         </>

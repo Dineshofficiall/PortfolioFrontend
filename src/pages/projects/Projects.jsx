@@ -4,7 +4,7 @@ import React from 'react'
 function Projects() {
     return (
         <>
-            <section id="projects" style={{ height: '100vh', background: 'lightcoral' }}>
+            <section id="projects">
                 <h1>projects-page</h1>
             </section>
         </>
