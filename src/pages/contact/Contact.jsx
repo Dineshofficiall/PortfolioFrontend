@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react'
-import { Button, Col, Container, Form, FormControl, Image, InputGroup } from 'react-bootstrap'
+import React, { useMemo, useRef, useState } from 'react'
+import { Button, Col, Container, Form, FormControl, Image, InputGroup, Spinner } from 'react-bootstrap'
 
 // image
 import rocketIcon from "/Project/PortfolioFrontend/Portfolio/src/assets/contact icon/rocket.png"
@@ -8,7 +8,75 @@ import rocketIcon from "/Project/PortfolioFrontend/Portfolio/src/assets/contact 
 // css
 import "./contact.css"
 
+// icons
+import { TiTickOutline } from "react-icons/ti";
+import { IoCloseCircleSharp } from "react-icons/io5";
+
+// emailjs
+import emailjs from '@emailjs/browser'
+
 function Contact() {
+    const form = useRef();
+
+    const [formStatus, setFormStatus] = useState(true);
+
+    const [emailStatus, setEmailStatus] = useState(null);
+    const [subjectStatus, setSubjectStatus] = useState(null);
+    const [messageStatus, setMessageStatus] = useState(null);
+
+    const formValidation = () => {
+        const formElements = form.current.elements;
+        const email = formElements.mail.value;
+        const subject = formElements.subject.value;
+        const message = formElements.message.value;
+
+        const emailValidate = email.match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
+        setEmailStatus(emailValidate ? true : false);
+
+        setSubjectStatus(subject.length >= 3 ? true : false);
+
+        setMessageStatus(message.length >= 5 ? true : false);
+
+        return emailValidate && subject.length >= 3 && message.length >= 5;
+    }
+
+    const sendMail = async (e) => {
+        e.preventDefault();
+    
+        if (formValidation()) {
+            try {
+
+                // {
+                //     // code is for letting know the comments in the console to get all the single form data
+
+                //     const formData = new FormData(form.current);
+                //     for (let [key, value] of formData.entries()) {
+                //         console.log(`${key}: ${value}`);
+                //     }
+                // }
+
+                setFormStatus(false);
+    
+                const messageResponse = await emailjs.sendForm(
+                    "service_fquu7mq",
+                    "template_ew9jsn9",
+                    form.current,
+                    "Ch90_r-QFo5NUtUV9"
+                );
+                console.log("Email sent successfully:", messageResponse.text);
+                
+                setFormStatus(true);
+                form.current.reset();
+                    
+                
+            } catch (error) {
+                console.error("Error while sending email:", error);
+            }
+        } else {
+            alert("Form validation failed. Please check the inputs.");
+        }
+    };
+    
     return (
         <>
             <section>
@@ -23,41 +91,42 @@ function Contact() {
                                 <h4 className='m-0 mx-2'>Email Me</h4>
                                 <Image src={rocketIcon} width={40}/>
                             </div>
-                            <InputGroup className="mb-3 input-group">
-                                <FormControl
-                                    className='Contact-Input-Groups rounded-4'
-                                    placeholder="Your Email"
-                                    aria-label="Email"
-                                    type="email"
-                                />
-                            </InputGroup>
-                            <InputGroup className="mb-3 input-group">
-                                <FormControl
-                                    className='Contact-Input-Groups rounded-4'
-                                    placeholder="Your Name"
-                                    aria-label="Name"
-                                    type="text"
-                                />
-                            </InputGroup>
-                            <InputGroup className="mb-3 input-group">
-                                <FormControl
-                                    className='Contact-Input-Groups rounded-4'
-                                    placeholder="Subject"
-                                    aria-label="Subject"
-                                    type="text"
-                                />
-                            </InputGroup>
-                            <InputGroup>
-                                <Form.Control 
-                                    as="textarea" 
-                                    aria-label="With textarea"
-                                    className='Contact-Input-Groups rounded-4'
-                                    placeholder="Message"
-                                />
-                            </InputGroup>
-                            <div className='mt-4 Contact-btn text-center'>
-                                <Button className="rounded-5">Send</Button>
-                            </div>
+                            <Form ref={form} onSubmit={sendMail}>
+                                <InputGroup className="mb-3 parent-contact-block">
+                                    <FormControl
+                                        className='Contact-Input-Groups rounded-4'
+                                        placeholder="Your Email"
+                                        aria-label="Email"
+                                        type="email"
+                                        name="mail"
+                                    />
+                                    {emailStatus === false ? <span><IoCloseCircleSharp /></span> : emailStatus === true ? <span><TiTickOutline /></span> : null}
+                                </InputGroup>
+                                <InputGroup className="mb-3 parent-contact-block">
+                                    <FormControl
+                                        className='Contact-Input-Groups rounded-4'
+                                        placeholder="Subject"
+                                        aria-label="Subject"
+                                        type="text"
+                                        name='subject'
+                                    />
+                                    {subjectStatus === false ? <span><IoCloseCircleSharp /></span> : subjectStatus === true ? <span><TiTickOutline color='green' /></span> : null}
+                                </InputGroup>
+                                <InputGroup className="mb-3 parent-contact-block">
+                                    <Form.Control 
+                                        as="textarea" 
+                                        aria-label="With textarea"
+                                        className='Contact-Input-Groups rounded-4'
+                                        placeholder="Message"
+                                        rows={6}
+                                        name='message'
+                                    />
+                                    {messageStatus === false ? <span><IoCloseCircleSharp color='red'/></span> : messageStatus === true ? <span><TiTickOutline color='green'/></span> : null}
+                                </InputGroup>
+                                <div className='mt-4 Contact-btn text-center'>
+                                    <Button className="rounded-5" type='submit'>{formStatus === true ? <span className='bg-transparent'>send</span> : <Spinner animation="border" variant="info" className='spinner' />}</Button>
+                                </div>
+                            </Form>
                         </div>
                     </Col>
                 </Container>

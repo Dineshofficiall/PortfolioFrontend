@@ -2,7 +2,16 @@
     background-color: #191724 !important;
     border: 1px solid #7806f1 !important;
     border-radius: 17%  !important;
+    position: relative;
 }
+.parent-contact-block span {
+    position: absolute;
+    z-index: 1;
+    right: 13px;
+    top: 5px;
+    background-color: transparent;
+}
+
 .Contact-Input-Groups:focus {
     box-shadow: none !important;
     outline: none !important;
@@ -35,6 +44,7 @@
 /* btn */
 .Contact-btn button{
     padding: 6px 6em;
+    /* height: ; */
     background: linear-gradient(to right, #7705f0 40%, #6513a4 46%, #3c0a3c 0%);
     background-size: 300% 100%;
     background-position: 100% 0;
@@ -45,6 +55,10 @@
 }
 .Contact-btn button:hover {
     background-position: 0 0;
+}
+.Contact-btn .spinner {
+    font-size: 10px;
+    background-color: transparent;
 }
 @keyframes contactBorderColorAnimation {
     0% {
