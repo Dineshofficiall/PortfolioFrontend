@@ -82,6 +82,9 @@ function Contact() {
                 console.log("Email sent successfully:", messageResponse.text);
                 
                 setFormStatus(true);
+                setEmailStatus(null);
+                setSubjectStatus(null);
+                setMessageStatus(null);
                 form.current.reset();
                 
                 notify();
@@ -109,13 +112,13 @@ function Contact() {
     return (
         <>
             <section>
-                <Container className='col-6 p-1 my-5'>
+                <Container className='col-12 col-sm-9 col-lg-6 px-3 px-sm-0 p-1 my-5'>
                     <div className="text-center mb-5">
                         <h1>Contact</h1>
                         <p>Feel free to reach out to me for any questions or Opportunities</p>
                     </div>
                     <Col className='d-flex justify-content-center align-items-center'>
-                        <div className='col-9 p-4 contact-block'>
+                        <div className='col-12 col-md-9 col-lg-9 p-4 contact-block'>
                             <div className='mb-3 d-flex justify-content-start align-items-center'>
                                 <h4 className='m-0 mx-2'>Email Me</h4>
                                 <Image src={rocketIcon} width={40}/>
@@ -153,7 +156,7 @@ function Contact() {
                                     {messageStatus === false ? <span><IoCloseCircleSharp color='red'/></span> : messageStatus === true ? <span><TiTickOutline color='green'/></span> : null}
                                 </InputGroup>
                                 <div className='mt-4 Contact-btn text-center'>
-                                    <Button className="rounded-5" type='submit'>{formStatus === true ? <span style={{backgroundColor : "transparent", fontSize : "23px"}}>send</span> : <span className='bg-transparent mx-2'><Spinner animation="border" variant="info" className='spinner' /></span>}</Button>
+                                    <Button className="rounded-5" type='submit'>{formStatus === true ? <span style={{backgroundColor : "transparent"}}>send</span> : <span className='bg-transparent mx-2'><Spinner animation="border" variant="info" className='spinner' style={{ width: '1.2rem', height: '1.2rem' }} /></span>}</Button>
                                 </div>
                             </Form>
                         </div>

@@ -43,8 +43,7 @@
 
 /* btn */
 .Contact-btn button{
-    padding: 5px 8em;
-    /* height: ; */
+    padding: 3.5px 6em;
     background: linear-gradient(to right, #7705f0 40%, #6513a4 46%, #3c0a3c 0%);
     background-size: 300% 100%;
     background-position: 100% 0;

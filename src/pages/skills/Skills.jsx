@@ -25,87 +25,87 @@ import './skills.css'
 function Skills() {
     return (
         <>
-            <section id="skills" className='my-4 py-4 my-xl-5 py-xl-5'>
-                <Container>
-                    <div className='text-center mb-4'>
+            <section id="skills" >
+                <Container className='col-12 col-md-11 col-lg-8 my-5'>
+                    <div className='text-center mb-5'>
                         <h1>Skills</h1>
                         <article>Here are some of my skills on which I have been working on for the past 9months</article>
                     </div>
-                    <Row className='d-flex justify-content-center align-content-between align-items-center row-gap-5 px-3 px-md-0 gap-md-4 gap-lg-5 p-md-5'>
-                        <Col className='col-12 col-md-5 col-lg-4 py-4 py-md-3 py-lg-5 align-content-center skillSet'>
-                            <h3 className='text-center mb-4'>Frontend</h3>
-                            <main className='col-12 d-flex justify-content-evenly align-items-center flex-wrap p-2'>
-                                <div className='border-1 border rounded-pill d-flex align-items-center m-2 py-2 px-2'>
+                    <Row xs={1} sm={2} md={3} lg={3} className="d-flex justify-content-evenly align-items-center gap-5 p-3 p-sm-0">
+                        <Col className='skillSet-parent mx-2'>
+                            <h4 className='text-center mt-4 mb-0'>Frontend</h4>
+                            <div className='skillSet'>
+                                <div className='icons-container'>
                                     <Image src={reactIcon} width={23} alt='' />
-                                    <h5 className='m-0'>React js</h5>
+                                    <li>React js</li>
                                 </div>
-                                <div className='border-1 border rounded-pill d-flex align-items-center m-2 py-2 px-3'>
+                                <div className='icons-container'>
                                     <Image src={reduxIcon} width={23} alt='' />
-                                    <h5 className='m-0'>Redux</h5>
+                                    <li>Redux</li>
                                 </div>
-                                <div className='border-1 border rounded-pill d-flex align-items-center m-2 py-2 px-3'>
+                                <div className='icons-container'>
                                     <Image src={htmlIcon} width={23} alt='' />
-                                    <h5 className='m-0'>Html</h5>
+                                    <li>Html</li>
                                 </div>
-                                <div className='border-1 border rounded-pill d-flex align-items-center m-2 py-2 px-3'>
+                                <div className='icons-container'>
                                     <Image src={bootStrapIcon} width={23} alt='' />
-                                    <h5 className='m-0'>Bootstrap</h5>
+                                    <li>Bootstrap</li>
                                 </div>
-                                <div className='border-1 border rounded-pill d-flex align-items-center m-2 py-2 px-3'>
+                                <div className='icons-container'>
                                     <Image src={cssIcon} width={23} alt='' />
-                                    <h5 className='m-0'>Css</h5>
+                                    <li>Css</li>
                                 </div>
-                                <div className='border-1 border rounded-pill d-flex align-items-center m-2 py-2 px-3'>
+                                <div className='icons-container'>
                                     <Image src={jsIcon} width={23} alt='' />
-                                    <h5 className='m-0'>Java Script</h5>
+                                    <li>Java Script</li>
                                 </div>
-                            </main>
+                            </div>
                         </Col>
-                        <Col className='col-12 col-md-5 col-lg-4 py-4 py-md-3 py-lg-5 align-content-center skillSet'>
-                            <h3 className='text-center mb-4'>Backend</h3>
-                            <main className='col-12 d-flex justify-content-evenly align-items-center flex-wrap p-2'>
-                                <div className='border-1 border rounded-pill d-flex align-items-center m-2 py-2 px-2'>
+                        <Col className='skillSet-parent'>
+                            <h4 className='text-center mt-4 mb-0'>Backend</h4>
+                            <div className="skillSet">
+                                <div className='icons-container'>
                                     <Image src={javaIcon} width={23} alt='' />
-                                    <h5 className='m-0 ms-1'>Java</h5>
+                                    <li>Java</li>
                                 </div>
-                                <div className='border-1 border rounded-pill d-flex align-items-center m-2 py-2 px-3'>
+                                <div className='icons-container'>
                                     <Image src={springBootIcon} width={23} alt='' />
-                                    <h5 className='m-0 ms-1'>SpringBoot</h5>
+                                    <li>SpringBoot</li>
                                 </div>
-                                <div className='border-1 border rounded-pill d-flex align-items-center m-2 py-2 px-3'>
+                                <div className='icons-container'>
                                     <Image src={nodeJsIcon} width={23} alt='' />
-                                    <h5 className='m-0 ms-1'>NodeJs</h5>
+                                    <li>NodeJs</li>
                                 </div>
-                                <div className='border-1 border rounded-pill d-flex align-items-center m-2 py-2 px-3'>
+                                <div className='icons-container'>
                                     <Image src={postgreSqlIcon} width={23} alt='' />
-                                    <h5 className='m-0 ms-1'>PostgreSql</h5>
+                                    <li>PostgreSql</li>
                                 </div>
-                            </main>
+                            </div>
                         </Col>
-                        <Col className='col-12 col-md-5 col-lg-4 py-4 py-md-3 py-lg-5 align-content-center skillSet'>
-                            <h3 className='text-center mb-4'>Others</h3>
-                            <main className='col-12 d-flex justify-content-evenly align-items-center flex-wrap p-2'>
-                                <div className='border-1 border rounded-pill d-flex align-items-center m-2 py-2 px-2'>
+                        <Col className='skillSet-parent'>
+                            <h4 className='text-center mt-4 mb-0'>Others</h4>
+                            <div className="skillSet">
+                                <div className='icons-container'>
                                     <Image src={gitIcon} width={23} alt='' />
-                                    <h5 className='m-0 ms-1'>Git</h5>
+                                    <li>Git</li>
                                 </div>
-                                <div className='border-1 border rounded-pill d-flex align-items-center m-2 py-2 px-3'>
+                                <div className='icons-container'>
                                     <Image src={gitHubIcon} width={23} alt='' />
-                                    <h5 className='m-0 ms-1'>GitHub</h5>
+                                    <li>GitHub</li>
                                 </div>
-                                <div className='border-1 border rounded-pill d-flex align-items-center m-2 py-2 px-3'>
+                                <div className='icons-container'>
                                     <Image src={intellijIcon} width={23} alt='' />
-                                    <h5 className='m-0 ms-1'>Intellij</h5>
+                                    <li>Intellij</li>
                                 </div>
-                                <div className='border-1 border rounded-pill d-flex align-items-center m-2 py-2 px-3'>
+                                <div className='icons-container'>
                                     <Image src={vsCodeIcon} width={23} alt='' />
-                                    <h5 className='m-0 ms-1'>Vs Code</h5>
+                                    <li>Vs Code</li>
                                 </div>
-                                <div className='border-1 border rounded-pill d-flex align-items-center m-2 py-2 px-3'>
+                                <div className='icons-container'>
                                     <Image src={postmanIcon} width={23} alt='' />
-                                    <h5 className='m-0 ms-1'>Postman</h5>
+                                    <li>Postman</li>
                                 </div>
-                            </main>
+                            </div>
                         </Col>
                     </Row>
                 </Container>

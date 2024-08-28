@@ -14,7 +14,7 @@
 /* ends */
 
 /* color for entire block */
-.project-card, p, em{
+.project-card, .project-card p, .project-card em{
     background-color: rgb(19, 17, 17) !important;
 }
 /* ends */
