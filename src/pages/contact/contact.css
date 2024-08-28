@@ -43,7 +43,7 @@
 
 /* btn */
 .Contact-btn button{
-    padding: 6px 6em;
+    padding: 5px 8em;
     /* height: ; */
     background: linear-gradient(to right, #7705f0 40%, #6513a4 46%, #3c0a3c 0%);
     background-size: 300% 100%;
@@ -57,7 +57,7 @@
     background-position: 0 0;
 }
 .Contact-btn .spinner {
-    font-size: 10px;
+    font-size: 15px;
     background-color: transparent;
 }
 @keyframes contactBorderColorAnimation {

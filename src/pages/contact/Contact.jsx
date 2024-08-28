@@ -15,7 +15,23 @@ import { IoCloseCircleSharp } from "react-icons/io5";
 // emailjs
 import emailjs from '@emailjs/browser'
 
+// toastify
+import { ToastContainer, toast, Slide  } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function Contact() {
+    const notify = () => toast.success('🤖 Successfully sent!', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Slide,
+    });
+
     const form = useRef();
 
     const [formStatus, setFormStatus] = useState(true);
@@ -67,10 +83,23 @@ function Contact() {
                 
                 setFormStatus(true);
                 form.current.reset();
-                    
+                
+                notify();
                 
             } catch (error) {
                 console.error("Error while sending email:", error);
+
+                toast.error('Failed to send email. Please try again later.', {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    transition: Slide,
+                });
             }
         } else {
             alert("Form validation failed. Please check the inputs.");
@@ -124,11 +153,24 @@ function Contact() {
                                     {messageStatus === false ? <span><IoCloseCircleSharp color='red'/></span> : messageStatus === true ? <span><TiTickOutline color='green'/></span> : null}
                                 </InputGroup>
                                 <div className='mt-4 Contact-btn text-center'>
-                                    <Button className="rounded-5" type='submit'>{formStatus === true ? <span className='bg-transparent'>send</span> : <Spinner animation="border" variant="info" className='spinner' />}</Button>
+                                    <Button className="rounded-5" type='submit'>{formStatus === true ? <span style={{backgroundColor : "transparent", fontSize : "23px"}}>send</span> : <span className='bg-transparent mx-2'><Spinner animation="border" variant="info" className='spinner' /></span>}</Button>
                                 </div>
                             </Form>
                         </div>
                     </Col>
+                    <ToastContainer
+                        position="top-right"
+                        autoClose={2000}
+                        hideProgressBar={false}
+                        newestOnTop
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        theme="dark"
+                        transition={Slide}
+                    />
                 </Container>
             </section>
         </>
