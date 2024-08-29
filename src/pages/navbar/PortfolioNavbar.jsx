@@ -21,7 +21,7 @@ function PortfolioNavbar() {
 
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
-                <Navbar.Collapse className='py-4 py-lg-0' id="responsive-navbar-nav">
+                <Navbar.Collapse className='py-4 py-lg-0 ' id="responsive-navbar-nav">
                     <Nav className="col-lg-8 mb-4 mb-lg-0 d-flex justify-content-evenly align-items-center me-auto">
                         <ScrollLink
                             activeClass="active"
@@ -46,6 +46,18 @@ function PortfolioNavbar() {
                             style={{cursor : "pointer"}}
                         >
                             Skills
+                        </ScrollLink>
+                        <ScrollLink
+                            activeClass='active'
+                            className='nav-link'
+                            to='work'
+                            spy={true}
+                            smooth={true}
+                            offset={-70}
+                            duration={500}
+                            style={{cursor : "pointer"}}
+                        >
+                            Work
                         </ScrollLink>
                         <ScrollLink
                             activeClass="active"

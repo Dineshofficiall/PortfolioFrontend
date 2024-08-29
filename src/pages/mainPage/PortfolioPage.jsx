@@ -5,12 +5,14 @@ import Skills from '../skills/Skills'
 import Projects from '../projects/Projects'
 import Education from '../education/Education'
 import Contact from '../contact/Contact'
+import Work from '../work/Work'
 
 function PortfolioPage() {
     return (
         <div>
             <About />
             <Skills />
+            <Work />
             <Projects />
             <Education />
             <Contact />
