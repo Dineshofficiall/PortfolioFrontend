@@ -15,7 +15,7 @@
 
 /* color for entire block */
 .project-card, .project-card p, .project-card em{
-    background-color: rgb(19, 17, 17) !important;
+    background-color: rgba(19, 17, 17, 0.548) !important;
 }
 /* ends */
 
@@ -27,7 +27,7 @@
     padding: 2px 7px;
 }
 .project-card .header-content li {
-    background-color: rgb(19, 17, 17) !important;
+    background-color: rgba(19, 17, 17, 0.548) !important;
     list-style: none;
     margin: 3px 5px;
     padding: 2px 5px;

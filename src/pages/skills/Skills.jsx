@@ -25,7 +25,7 @@ import './skills.css'
 function Skills() {
     return (
         <>
-            <section id="skills" >
+            <section id="skills">
                 <Container className='col-12 col-md-11 col-lg-8 my-5'>
                     <div className='text-center mb-5'>
                         <h1>Skills</h1>

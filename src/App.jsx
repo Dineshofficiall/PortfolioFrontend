@@ -6,6 +6,7 @@ import Error from "./pages/404/Error"
 import AllProject from "./pages/projects/AllProject"
 import WebProject from "./pages/projects/WebProject"
 import AndroidProject from "./pages/projects/AndroidProject"
+import Footer from "./pages/footer/Footer"
 function App() {
 
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="*" element={<Error />}/>
         </Routes>
       </main>
+      <Footer />
     </>
   )
 }
