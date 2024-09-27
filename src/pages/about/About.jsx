@@ -12,24 +12,24 @@ function About() {
     }
     return (
         <>
-            <section id="about" className='my-xl-4 py-xl-4'>
-                <Container className='my-3 py-3 my-lg-4 py-lg-4 px-lg-4'>
+            <section id="about">
+                <Container className='my-3 py-3 my-lg-4 py-lg-2 px-lg-4'>
                     <Row className='d-md-flex justify-content-evenly'>
                         <Col className='order-1 order-md-0 col-12 col-md-6 col-lg-6 px-3 ps-md-5 pe-md-2 my-4 my-md-0 d-flex flex-column justify-content-evenly align-items-start'>
-                            <div className='my-lg-4'>
+                            <div className='my-lg-4 name'>
                                 <h1>Hi, I am</h1>
-                                <h2>Dinesh Kumar</h2>
+                                <h1>Dinesh Kumar</h1>
                             </div>
+                            <h1 className='domain'>I am a fullstack developer</h1>
                             <div className='py-3 py-md-0 my-lg-2'>
-                                <article>I am a fullstack developer</article>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet dolorum fugit ut voluptate voluptas explicabo tempore quis temporibus. Impedit, accusantium eligendi.</p>
+                                <p className='passage'>I’m a full-stack developer focused on ReactJS, with 2 months of React Native experience at Hema Enterprise Pvt Ltd. Skilled in HTML, CSS, JavaScript, and React, I deliver responsive, high-quality apps in fast-paced environments. My time at Hema has strengthened my ability to collaborate, understand project architecture, and work effectively in teams. With a BSc in Computer Science and expertise in Bootstrap and Git, I’m ready to add value to your team.</p>
                             </div>
                             <div className='Resume-sec'>
                                 <Button variant="outline-secondary rounded-pill" onClick={()=>resumeRedirection()}>{resumeStates}</Button>
                             </div>
                         </Col>
-                        <Col className='order-0 order-md-1 col-12 col-md-5 col-lg-4  pe-lg-4 d-flex justify-content-center'>
-                            <Image src={Profile} alt='' style={{width : "87%", height : "300px", objectFit : "cover", borderRadius : "56%"}} />
+                        <Col className='order-0 order-md-1 col-12 col-md-5 col-lg-4  pe-lg-4 py-lg-5 d-flex justify-content-center '>
+                            <Image src={Profile} alt='' style={{width : "87%", height : "320px", objectFit : "cover", borderRadius : "56%"}} />
                         </Col>
                     </Row>
                 </Container>

@@ -1,3 +1,17 @@
+.name h1{
+    font-weight: 700;
+    font-size: 3rem;
+}
+.domain {
+    font-weight: 600;
+    font-size: 2.3rem;
+}
+.passage {
+    line-height: 1.6;
+    font-size: 1.05rem;
+    word-spacing: 1px;
+    font-weight: 500;
+}
 .Resume-sec button {
     padding: 8px 29px;
     background: linear-gradient(to right, #d105f0 40%, #9113a4 46%, #3c0a3c 0%);
