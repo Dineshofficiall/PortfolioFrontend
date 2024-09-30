@@ -21,3 +21,7 @@
     border: 3px solid rgb(70, 3, 255);
     border-radius: 38% 62% 67% 33% / 21% 37% 63% 79% ;
 }
+.educationPassage {
+    text-align: justify;
+    text-indent: 6rem;
+}

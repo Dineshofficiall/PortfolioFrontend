@@ -22,7 +22,7 @@ function About() {
                             </div>
                             <h1 className='domain'>I am a fullstack developer</h1>
                             <div className='py-3 py-md-0 my-lg-2'>
-                                <p className='passage'>I’m a full-stack developer focused on ReactJS, with 2 months of React Native experience at Hema Enterprise Pvt Ltd. Skilled in HTML, CSS, JavaScript, and React, I deliver responsive, high-quality apps in fast-paced environments. My time at Hema has strengthened my ability to collaborate, understand project architecture, and work effectively in teams. With a BSc in Computer Science and expertise in Bootstrap and Git, I’m ready to add value to your team.</p>
+                                <p className='header-passage'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit asperiores officia fugit maiores quo, praesentium non vero temporibus quaerat amet sit quia, facilis ducimus similique expedita cupiditate minus aspernatur blanditiis?</p>
                             </div>
                             <div className='Resume-sec'>
                                 <Button variant="outline-secondary rounded-pill" onClick={()=>resumeRedirection()}>{resumeStates}</Button>
