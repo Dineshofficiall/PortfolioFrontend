@@ -32,7 +32,7 @@ function Skills() {
                         <article>Here are some of my skills on which I have been working on for the past 9months</article>
                     </div>
                     <Row xs={1} sm={2} md={3} lg={3} className="d-flex justify-content-evenly align-items-center gap-5 p-3 p-sm-0">
-                        <Col className='skillSet-parent mx-2'>
+                        <Col className='skillSet-parent'>
                             <h4 className='text-center mt-4 mb-0'>Frontend</h4>
                             <div className='skillSet'>
                                 <div className='icons-container'>
@@ -52,6 +52,10 @@ function Skills() {
                                     <li>Bootstrap</li>
                                 </div>
                                 <div className='icons-container'>
+                                    <Image src={reactIcon} width={23} alt='' />
+                                    <li>React Native</li>
+                                </div>
+                                <div className='icons-container'>
                                     <Image src={cssIcon} width={23} alt='' />
                                     <li>Css</li>
                                 </div>
@@ -69,12 +73,12 @@ function Skills() {
                                     <li>Java</li>
                                 </div>
                                 <div className='icons-container'>
-                                    <Image src={springBootIcon} width={23} alt='' />
-                                    <li>SpringBoot</li>
-                                </div>
-                                <div className='icons-container'>
                                     <Image src={nodeJsIcon} width={23} alt='' />
                                     <li>NodeJs</li>
+                                </div>
+                                <div className='icons-container'>
+                                    <Image src={springBootIcon} width={23} alt='' />
+                                    <li>SpringBoot</li>
                                 </div>
                                 <div className='icons-container'>
                                     <Image src={postgreSqlIcon} width={23} alt='' />

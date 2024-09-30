@@ -25,3 +25,19 @@
     text-align: justify;
     text-indent: 6rem;
 }
+
+@media screen and (max-width: 576px) {
+    .contents {
+        padding: 0;
+        border: none;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .contents .box::before {
+        display: none;
+    }
+    .content-inner-block {
+        width: 470px !important;
+        padding: 0 !important;
+    }
+}

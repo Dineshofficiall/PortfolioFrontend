@@ -14,7 +14,7 @@ function Projects() {
                 <Container className='col-12 col-md-9 col-lg-8'>
                     <div className='d-flex flex-column align-items-center justify-content-center mb-5'>
                         <h1>Projects</h1>
-                        <article className='col-8 text-center py-3'>I have worked on a wide range of projects. From web apps to android apps. Here are some of my projects.</article>
+                        <article className='col-10 col-sm-8 text-center py-3'>I have worked on a wide range of projects. From web apps to android apps. Here are some of my projects.</article>
                     </div>
                     <div className='d-flex justify-content-center align-items-center'>
                         <div className='col-11 col-md-7 col-lg-5'>
