@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import About from '../about/About'
+import About from '../../view/screen/about/About'
 import Skills from '../skills/Skills'
 import Projects from '../projects/Projects'
 import Education from '../education/Education'
@@ -9,14 +9,14 @@ import Work from '../work/Work'
 
 function PortfolioPage() {
     return (
-        <div>
+        <>
             <About />
             <Skills />
             <Work />
             <Projects />
             <Education />
             <Contact />
-        </div>
+        </>
     )
 }
 
