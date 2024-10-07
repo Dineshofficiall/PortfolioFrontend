@@ -4,7 +4,7 @@ import { Button, Col, Container, Image, Row } from 'react-bootstrap'
 import Profile from '/Project/PortfolioFrontend/Portfolio/src/assets/Profile/profile.jpg'
 import "./about.css"
 
-function About() {
+const About:React.FC = () => {
     const [resumeStates, setResumeStatus] = useState("Check Resume");
     const resumeRedirection = () => {
         setResumeStatus("Redirecting . . . .")

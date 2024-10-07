@@ -3,7 +3,7 @@ import React from 'react'
 import { Col, Container, Image, Row } from 'react-bootstrap'
 // css
 import './skills.css'
-import { SkillsComponent } from '../../view/components/SkillsComponent'
+import { SkillsComponent } from '../../components/SkillsComponent'
 
 const SkillsScreen: React.FC = () => {
     return (

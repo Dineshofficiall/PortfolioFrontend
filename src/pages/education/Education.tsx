@@ -1,14 +1,14 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import { Col, Container, Image, Row } from 'react-bootstrap';
-import mmmIcon from '/Project/PortfolioFrontend/Portfolio/src/assets/education logo/mmm.png';
-import amcIcon from '/Project/PortfolioFrontend/Portfolio/src/assets/education logo/amc.png';
-import edexIcon from '/Project/PortfolioFrontend/Portfolio/src/assets/education logo/edex.jpg';
+import { EducationalViewModal } from '../../viewModal/EducationalViewModal';
 
 // CSS
 import './education.css';
 
-function Education() {
+const Education:React.FC = () => {
+    const educationalModal = EducationalViewModal();
+    
     return (
         <section id="education" className='my-5 py-5'>
             <Container className='col-12 col-md-10 col-lg-7'>
@@ -18,22 +18,25 @@ function Education() {
                 </div>
                 <Row className='col-12 ms-0 ms-sm-2 contents'>
                     <aside className='content-inner-block'>
-                        <Col className='col-12 border rounded-4 p-3 mb-4 box'>
-                            <div className='d-flex align-items-center'>
-                                <Image src={edexIcon} width={45} className='me-3' alt='' />
-                                <div>
-                                    <h5 className='m-0'>Edex-Tech, TamilNadu</h5>
-                                    <small className='m-0'>Full Stack WebDevelopment</small>
+                        {educationalModal.map((data, index)=>(
+                            <Col className='col-12 border rounded-4 p-3 mb-4 box'>
+                                <div className='d-flex align-items-center'>
+                                    <Image src={data.eduIcon} width={45} className='me-3' alt={data.iconAlt} />
+                                    <div>
+                                        <h5 className='m-0'>{data.schoolingName}</h5>
+                                        <small className='m-0'>{data.domain}</small>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className='mt-3 mb-2'>
-                                <em style={{ fontSize: "12.3px", fontWeight: "lighter" }}>Oct 2023 - Apl 2024</em>
-                            </div>
-                            <article className='educationPassage'>At Edex Tech, I completed an eight-month full-stack development course, mastering technologies such as HTML, CSS, JavaScript, Bootstrap, ReactJS, Java, and SQL. This experience provided me with the practical skills needed for both front-end and back-end development, allowing me to create responsive web applications.</article>
-                        </Col>
-                        <Col className='col-12 border rounded-4 p-3 mb-4 box'>
+                                <div className='mt-3 mb-2'>
+                                    {data.CGPA && <h6 className='m-0'>{data.CGPA}</h6>}
+                                    <em style={{ fontSize: "12.3px", fontWeight: "lighter" }}>{data.courseDuration}</em>
+                                </div>
+                                <article className='educationPassage'>{data.description}</article>
+                            </Col>
+                        ))}
+                        {/* <Col className='col-12 border rounded-4 p-3 mb-4 box'>
                             <div className='d-flex align-items-center'>
-                                <Image src={amcIcon} width={45} className='me-3' alt='' />
+                                <Image src={icon.amcIcon} width={45} className='me-3' alt='' />
                                 <div>
                                     <h5 className='m-0'>The American College of Arts and Science, TamilNadu</h5>
                                     <small className='m-0'>Bachelor of Science - BSc, Computer Science</small>
@@ -47,7 +50,7 @@ function Education() {
                         </Col>
                         <Col className='col-12 border rounded-4 p-3 mb-4 box'>
                             <div className='d-flex align-items-center'>
-                                <Image src={mmmIcon} width={45} className='me-3' alt='' />
+                                <Image src={icon.mmmIcon} width={45} className='me-3' alt='' />
                                 <div>
                                     <h5 className='m-0'>Madurai Meenakshi Matriculationn Hr, TamilNadu</h5>
                                     <small className='m-0'>12th grade</small>
@@ -58,7 +61,7 @@ function Education() {
                                 <em style={{ fontSize: "12.3px", fontWeight: "lighter" }}>Mar 2018 - Apr 2019</em>
                             </div>
                             <article>Before advancing to higher education, I completed my 12th grade in the first group with a focus on Computer Science, earning 50% marks. Despite some health challenges, I gained a foundational understanding of computer science concepts, which fueled my passion for the field.</article>
-                        </Col>
+                        </Col> */}
                     </aside>
                 </Row>
             </Container>
