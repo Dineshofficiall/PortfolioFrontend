@@ -13,6 +13,7 @@ import gitHubIcon from "/Project/PortfolioFrontend/Portfolio/src/assets/Skills i
 import vsCodeIcon from "/Project/PortfolioFrontend/Portfolio/src/assets/Skills icons/vscode.svg"
 import nodeJsIcon from "/Project/PortfolioFrontend/Portfolio/src/assets/Skills icons/nodejs.svg"
 import intellijIcon from "/Project/PortfolioFrontend/Portfolio/src/assets/Skills icons/intelli.svg"
+
 export const SkillsIcon = () => {
     return {
         reactIcon,
