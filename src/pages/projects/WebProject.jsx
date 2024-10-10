@@ -3,16 +3,17 @@ import React from 'react'
 import { Card, Col, Row } from 'react-bootstrap'
 
 // image
-import project1 from '/Project/PortfolioFrontend/Portfolio/src/assets/projects/projectInfo.png'
+import { ProjectImage } from '../../Images/ProjectImage';
 
 function WebProject() {
+    const img = ProjectImage();
     return (
         <aside className='content-inner-block'>
             <Row xs={1} sm={2} lg={3} className="g-4 g-sm-5 g-md-4 g-lg-3 my-4">
                 {Array.from({ length: 5 }).map((_, idx) => (
                     <Col key={idx}>
                         <Card className='p-2 rounded-4 project-card'>
-                            <Card.Img variant="top" className='rounded-4 p-2 object-fit-cover project-card' height={180} src={project1} />
+                            <Card.Img variant="top" className='rounded-4 p-2 object-fit-cover project-card' height={180} src={img.projectCardImg} />
                             <Card.Header className='header-content'>
                                 <li>Bootstrap</li>
                                 <li>React Js</li>

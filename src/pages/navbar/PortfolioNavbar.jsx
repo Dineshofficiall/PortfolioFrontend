@@ -1,10 +1,11 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import { Button, Col, Container, Image, Nav, Navbar } from 'react-bootstrap';
-// import seoLogo from '/Project/PortfolioFrontend/Portfolio/src/assets/logo/seo.png';
 import { Link as ScrollLink } from 'react-scroll';
-
+import { NavIcon } from '../../Images/NavIcon'
 function PortfolioNavbar() {
+    const icon = NavIcon();
+
     const [gitHubStatus, setGithubStates] = useState ("GitHub Profile");
     const githubRedirection = () => {
         setGithubStates("Redirecting . . . .");
@@ -15,7 +16,7 @@ function PortfolioNavbar() {
         <Navbar sticky="top" collapseOnSelect expand="lg">
             <Container className='px-0 px-lg-5'>
                 <Col className='col-md-3 ms-2 ms-lg-0 d-flex justify-content-start justify-content-md-center align-items-center'>
-                    {/* <Image style={{ width: '40px', marginRight: '.8rem' }} src={seoLogo} alt='Logo' /> */}
+                    <Image style={{ width: '40px', marginRight: '.8rem' }} src={icon.seoLogo} alt='Logo' />
                     <Navbar.Brand>Portfolio</Navbar.Brand>
                 </Col>
 
