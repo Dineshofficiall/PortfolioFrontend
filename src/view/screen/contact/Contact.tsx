@@ -3,8 +3,7 @@ import React, { useMemo, useRef, useState } from 'react'
 import { Button, Col, Container, Form, FormControl, Image, InputGroup, Spinner } from 'react-bootstrap'
 
 // image
-import rocketIcon from "/Project/PortfolioFrontend/Portfolio/src/assets/contact icon/rocket.png"
-
+import { ContactIcon } from '../../../Images/ContactIcon'
 // css
 import "./contact.css"
 
@@ -19,7 +18,15 @@ import emailjs from '@emailjs/browser'
 import { ToastContainer, toast, Slide  } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-function Contact() {
+interface FormElements extends HTMLFormControlsCollection {
+    mail: HTMLInputElement;
+    subject: HTMLInputElement;
+    message: HTMLTextAreaElement;
+}
+
+const Contact:React.FC = () => {
+    const icon = ContactIcon();
+    
     const notify = () => toast.success('🤖 Successfully sent!', {
         position: "top-right",
         autoClose: 2000,
@@ -32,21 +39,25 @@ function Contact() {
         transition: Slide,
     });
 
-    const form = useRef();
+    const form = useRef<HTMLFormElement | null>(null);
 
-    const [formStatus, setFormStatus] = useState(true);
+    const [formStatus, setFormStatus] = useState<boolean>(true);
 
-    const [emailStatus, setEmailStatus] = useState(null);
-    const [subjectStatus, setSubjectStatus] = useState(null);
-    const [messageStatus, setMessageStatus] = useState(null);
+    const [emailStatus, setEmailStatus] = useState<boolean | null>(null);
+    const [subjectStatus, setSubjectStatus] = useState<boolean | null>(null);
+    const [messageStatus, setMessageStatus] = useState<boolean | null>(null);
 
     const formValidation = () => {
-        const formElements = form.current.elements;
+        if (!form.current) return false;
+
+        const formElements = form.current.elements as FormElements;
         const email = formElements.mail.value;
         const subject = formElements.subject.value;
         const message = formElements.message.value;
 
-        const emailValidate = email.match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
+        const emailValidate = email.match(
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        );
         setEmailStatus(emailValidate ? true : false);
 
         setSubjectStatus(subject.length >= 3 ? true : false);
@@ -54,32 +65,24 @@ function Contact() {
         setMessageStatus(message.length >= 5 ? true : false);
 
         return emailValidate && subject.length >= 3 && message.length >= 5;
-    }
+    };
 
-    const sendMail = async (e) => {
+    const sendMail = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
+        if (!form.current) return;
     
         if (formValidation()) {
             try {
-
-                // {
-                //     // code is for letting know the comments in the console to get all the single form data
-
-                //     const formData = new FormData(form.current);
-                //     for (let [key, value] of formData.entries()) {
-                //         console.log(`${key}: ${value}`);
-                //     }
-                // }
-
                 setFormStatus(false);
     
                 const messageResponse = await emailjs.sendForm(
-                    "service_fquu7mq",
-                    "template_ew9jsn9",
+                    'service_fquu7mq',
+                    'template_ew9jsn9',
                     form.current,
-                    "Ch90_r-QFo5NUtUV9"
+                    'Ch90_r-QFo5NUtUV9'
                 );
-                console.log("Email sent successfully:", messageResponse.text);
+                console.log('Email sent successfully:', messageResponse.text);
                 
                 setFormStatus(true);
                 setEmailStatus(null);
@@ -121,7 +124,7 @@ function Contact() {
                         <div className='col-12 col-md-9 col-lg-9 p-4 contact-block'>
                             <div className='mb-3 d-flex justify-content-start align-items-center'>
                                 <h4 className='m-0 mx-2'>Email Me</h4>
-                                <Image src={rocketIcon} width={40}/>
+                                <Image src={icon.rocketIcon} width={40}/>
                             </div>
                             <Form ref={form} onSubmit={sendMail}>
                                 <InputGroup className="mb-3 parent-contact-block">

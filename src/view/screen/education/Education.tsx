@@ -19,7 +19,7 @@ const Education:React.FC = () => {
                 <Row className='col-12 ms-0 ms-sm-2 contents'>
                     <aside className='content-inner-block'>
                         {educationalModal.map((data, index)=>(
-                            <Col className='col-12 border rounded-4 p-3 mb-4 box'>
+                            <Col key={index} className='col-12 border rounded-4 p-3 mb-4 box'>
                                 <div className='d-flex align-items-center'>
                                     <Image src={data.eduIcon} width={45} className='me-3' alt={data.iconAlt} />
                                     <div>

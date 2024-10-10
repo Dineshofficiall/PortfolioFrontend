@@ -5,10 +5,10 @@ import Profile from '/Project/PortfolioFrontend/Portfolio/src/assets/Profile/pro
 import "./about.css"
 
 const About:React.FC = () => {
-    const [resumeStates, setResumeStatus] = useState("Check Resume");
+    const [resumeStates, setResumeStatus] = useState<string>("Check Resume");
     const resumeRedirection = () => {
         setResumeStatus("Redirecting . . . .")
-        window.location.href = "https://drive.google.com/file/d/1Hpb8i2uFJswlSIsxAW3v8JS5F7nmwBaW/view?usp=sharing";
+        window.location.href = "https://drive.google.com/file/d/1_uNcfz0v329WQElHAJ4AyZXvYw1R1kJd/view?usp=drive_link";
     }
     return (
         <>
