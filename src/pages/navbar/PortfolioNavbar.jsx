@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import { Button, Col, Container, Image, Nav, Navbar } from 'react-bootstrap';
-import seoLogo from '/Project/PortfolioFrontend/Portfolio/src/assets/logo/seo.png';
+// import seoLogo from '/Project/PortfolioFrontend/Portfolio/src/assets/logo/seo.png';
 import { Link as ScrollLink } from 'react-scroll';
 
 function PortfolioNavbar() {
