@@ -1,9 +1,10 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import { Button, Col, Container, Image, Row } from 'react-bootstrap';
-import Profile from '/Project/PortfolioFrontend/Portfolio/src/assets/Profile/profile.jpg';
+import { ProfileIcon } from '../../../Images/ProfileIcon';
 import "./about.css";
 var About = function () {
+    var icon = ProfileIcon();
     var _a = useState("Check Resume"), resumeStates = _a[0], setResumeStatus = _a[1];
     var resumeRedirection = function () {
         setResumeStatus("Redirecting . . . .");
@@ -23,6 +24,6 @@ var About = function () {
                         React.createElement("div", { className: 'Resume-sec' },
                             React.createElement(Button, { variant: "outline-secondary rounded-pill", onClick: function () { return resumeRedirection(); } }, resumeStates))),
                     React.createElement(Col, { className: 'order-0 order-md-1 col-12 col-md-5 col-lg-4  pe-lg-4 py-lg-5 d-flex justify-content-center ' },
-                        React.createElement(Image, { src: Profile, alt: '', style: { width: "87%", height: "320px", objectFit: "cover", borderRadius: "56%" } })))))));
+                        React.createElement(Image, { src: icon.Profile, alt: '', style: { width: "87%", height: "320px", objectFit: "cover", borderRadius: "56%" } })))))));
 };
 export default About;

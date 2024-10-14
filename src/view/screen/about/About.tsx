@@ -1,10 +1,11 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react'
 import { Button, Col, Container, Image, Row } from 'react-bootstrap'
-import Profile from '/Project/PortfolioFrontend/Portfolio/src/assets/Profile/profile.jpg'
+import { ProfileIcon } from '../../../Images/ProfileIcon'
 import "./about.css"
 
 const About:React.FC = () => {
+    const icon = ProfileIcon();
     const [resumeStates, setResumeStatus] = useState<string>("Check Resume");
     const resumeRedirection = () => {
         setResumeStatus("Redirecting . . . .")
@@ -29,7 +30,7 @@ const About:React.FC = () => {
                             </div>
                         </Col>
                         <Col className='order-0 order-md-1 col-12 col-md-5 col-lg-4  pe-lg-4 py-lg-5 d-flex justify-content-center '>
-                            <Image src={Profile} alt='' style={{width : "87%", height : "320px", objectFit : "cover", borderRadius : "56%"}} />
+                            <Image src={icon.Profile} alt='' style={{width : "87%", height : "320px", objectFit : "cover", borderRadius : "56%"}} />
                         </Col>
                     </Row>
                 </Container>
