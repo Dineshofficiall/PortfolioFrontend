@@ -3,9 +3,9 @@ import React from 'react'
 import { Card, Col, Row } from 'react-bootstrap'
 
 // image
-import { ProjectImage } from '../../Images/ProjectImage';
+import { ProjectImage } from '../../../Images/ProjectImage';
 
-function WebProject() {
+const WebProject:React.FC = () => {
     const img = ProjectImage();
     return (
         <aside className='content-inner-block'>

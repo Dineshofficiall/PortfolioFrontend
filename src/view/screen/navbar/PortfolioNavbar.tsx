@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 import { Button, Col, Container, Image, Nav, Navbar } from 'react-bootstrap';
 import { Link as ScrollLink } from 'react-scroll';
-import { NavIcon } from '../../Images/NavIcon'
-function PortfolioNavbar() {
+import { NavIcon } from '../../../Images/NavIcon'
+const PortfolioNavbar:React.FC = () => {
     const icon = NavIcon();
 
     const [gitHubStatus, setGithubStates] = useState ("GitHub Profile");

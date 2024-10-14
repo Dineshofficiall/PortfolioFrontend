@@ -3,9 +3,9 @@ import React from 'react'
 import { Card, Col, Row } from 'react-bootstrap'
 
 // image
-import { ProjectImage } from '../../Images/ProjectImage';
+import { ProjectImage } from '../../../Images/ProjectImage';
 
-function AllProject() {
+const AllProject: React.FC = () => {
     const img = ProjectImage();
     return (
         <Row xs={1} sm={2} lg={3} className="g-4 g-sm-5 g-md-4 g-lg-3 my-4">
