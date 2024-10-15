@@ -1,0 +1,14 @@
+{
+    "build": {
+      "cache": true
+    },
+    "buildCache": {
+      "include": [
+        "node_modules",
+        "dist",
+        "public"
+      ]
+    }
+  }
+  
+  
